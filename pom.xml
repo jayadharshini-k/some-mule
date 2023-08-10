@@ -102,7 +102,10 @@
     <profiles>
         <!-- Dev Profile -->
         <profile>
-            <id>3568e3de6ec1443d910a8c299b89b901</id>
+            <id>dev</id>
+            <activation>
+                     <activeByDefault>false</activeByDefault>
+           </activation>
             <build>
                 <plugins>
                     <plugin>
@@ -119,7 +122,7 @@
                                 <muleVersion>4.4.0</muleVersion>
                                 <username>${cloudhub.username}</username>
                                 <password>${cloudhub.password}</password>
-                                <applicationName>prod-app</applicationName>
+                                <applicationName>dev-app</applicationName>
                                 <businessGroupId>5c5086b09-e718-47d0-8ff7-9c7bd0152544</businessGroupId>
                                 <replicas>1</replicas>
                                 <vCores>0.1</vCores>
@@ -145,7 +148,10 @@
         
         <!-- Test Profile -->
         <profile>
-            <id>0321dd1307314a56ba2c34d5698264cb</id>
+            <id>test</id>
+            <activation>
+                     <activeByDefault>false</activeByDefault>
+            </activation>
             <build>
                 <plugins>
                     <plugin>
@@ -175,7 +181,10 @@
         
         <!-- Prod Profile -->
         <profile>
-            <id>a2db49af86c24d549fe669b1507bafbb</id>
+            <id>prod</id>
+            <activation>
+            <activeByDefault>false</activeByDefault>
+                     </activation>
             <build>
                 <plugins>
                     <plugin>
