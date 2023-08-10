@@ -124,7 +124,20 @@
                                 <replicas>1</replicas>
                                 <vCores>0.1</vCores>
                             </cloudhub2Deployment>
-                        </configuration>
+                     </configuration>
+                     <executions>
+                            <execution>
+                                <id>deploy-cloudhub</id>
+                                <phase>deploy</phase>
+                                <goals>
+                                    <goal>deploy</goal>
+                                </goals>
+                                <!-- Specify the profiles that should be activated for the deployment -->
+                                 <configuration>
+                                    <profiles>dev</profiles>
+                                </configuration>
+                            </execution>
+                    </executions>
                     </plugin>
                 </plugins>
             </build>
