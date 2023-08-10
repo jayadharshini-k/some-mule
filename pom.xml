@@ -117,7 +117,7 @@
                             <cloudhub2Deployment>
                                 <uri>https://anypoint.mulesoft.com</uri>
                                 <provider>MC</provider>
-                                <environment>dev</environment>
+                                <environment>Sandbox</environment>
                                 <target>Cloudhub-US-East-2</target>
                                 <muleVersion>4.4.0</muleVersion>
                                 <username>${cloudhub.username}</username>
@@ -163,7 +163,7 @@
                             <cloudhub2Deployment>
                                 <uri>https://anypoint.mulesoft.com</uri>
                                 <provider>MC</provider>
-                                <environment>test</environment>
+                                <environment>Sandbox</environment>
                                 <target>Cloudhub-US-East-2</target>
                                 <muleVersion>4.4.0</muleVersion>
                                 <username>${cloudhub.username}</username>
@@ -196,7 +196,7 @@
                             <cloudhub2Deployment>
                                 <uri>https://anypoint.mulesoft.com</uri>
                                 <provider>MC</provider>
-                                <environment>prod</environment>
+                                <environment>Production</environment>
                                 <target>Cloudhub-US-East-2</target>
                                 <muleVersion>4.4.0</muleVersion>
                                 <username>${cloudhub.username}</username>
