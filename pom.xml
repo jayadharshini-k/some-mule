@@ -102,7 +102,7 @@
     <profiles>
         <!-- Dev Profile -->
         <profile>
-            <id>3568e3de6ec1443d910a8c299b89b901</id>
+            <id>dev</id>
             <build>
                 <plugins>
                     <plugin>
@@ -145,7 +145,7 @@
         
         <!-- Test Profile -->
         <profile>
-            <id>0321dd1307314a56ba2c34d5698264cb</id>
+            <id>test</id>
             <build>
                 <plugins>
                     <plugin>
@@ -175,7 +175,7 @@
         
         <!-- Prod Profile -->
         <profile>
-            <id>a2db49af86c24d549fe669b1507bafbb</id>
+            <id>prod</id>
             <build>
                 <plugins>
                     <plugin>
