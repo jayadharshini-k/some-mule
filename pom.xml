@@ -123,7 +123,7 @@
                                 <username>${cloudhub.username}</username>
                                 <password>${cloudhub.password}</password>
                                 <applicationName>dev-app</applicationName>
-                                <businessGroupId>5c5086b09-e718-47d0-8ff7-9c7bd0152544</businessGroupId>
+                                <businessGroupId>3568e3de6ec1443d910a8c299b89b901</businessGroupId>
                                 <replicas>1</replicas>
                                 <vCores>0.1</vCores>
                             </cloudhub2Deployment>
@@ -169,7 +169,7 @@
                                 <username>${cloudhub.username}</username>
                                 <password>${cloudhub.password}</password>
                                 <applicationName>test-app</applicationName>
-                                <businessGroupId>c5086b09-e718-47d0-8ff7-9c7bd0152544</businessGroupId>
+                                <businessGroupId>0321dd1307314a56ba2c34d5698264cb</businessGroupId>
                                 <replicas>1</replicas>
                                 <vCores>0.1</vCores>
                             </cloudhub2Deployment>
@@ -202,7 +202,7 @@
                                 <username>${cloudhub.username}</username>
                                 <password>${cloudhub.password}</password>
                                 <applicationName>prod-app</applicationName>
-                                <businessGroupId>c5086b09-e718-47d0-8ff7-9c7bd0152544</businessGroupId>
+                                <businessGroupId>a2db49af86c24d549fe669b1507bafbb</businessGroupId>
                                 <replicas>1</replicas>
                                 <vCores>0.1</vCores>
                             </cloudhub2Deployment>
