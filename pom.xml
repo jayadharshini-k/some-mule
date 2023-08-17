@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>c5086b09-e718-47d0-8ff7-9c7bd0152544</groupId>
     <artifactId>flowstest</artifactId>
-    <version>1.4.0</version>
+    <version>1.5.0</version>
     <packaging>mule-application</packaging>
     <name>flowstest</name>
     <description />
@@ -94,8 +91,9 @@
         </dependency>
     </dependencies>
     <profiles>
+        <!-- Single Profile -->
         <profile>
-            <id>${deploy.environment}</id>
+            <id>deploy-environment</id>
             <activation>
                 <activeByDefault>false</activeByDefault>
             </activation>
@@ -110,13 +108,13 @@
                             <cloudhub2Deployment>
                                 <uri>https://anypoint.mulesoft.com</uri>
                                 <provider>MC</provider>
-                                <environment>${deploy.environment}</environment>
+                                <environment>${env}</environment>
                                 <target>Cloudhub-US-East-2</target>
                                 <muleVersion>4.4.0</muleVersion>
                                 <username>${cloudhub.username}</username>
                                 <password>${cloudhub.password}</password>
                                 <applicationName>${deploy.applicationName}</applicationName>
-                                <businessGroupId>${env.BUSINESS_GROUP_ID}</businessGroupId>
+                                <businessGroupId>${BUSINESS_GROUP_ID}</businessGroupId>
                                 <replicas>1</replicas>
                                 <vCores>0.1</vCores>
                             </cloudhub2Deployment>
@@ -128,9 +126,8 @@
                                 <goals>
                                     <goal>deploy</goal>
                                 </goals>
-                                <!-- Specify the profiles that should be activated for the deployment -->
                                 <configuration>
-                                    <profiles>${deploy.environment}</profiles>
+                                    <profiles>deploy-environment</profiles>
                                 </configuration>
                             </execution>
                         </executions>
@@ -163,12 +160,17 @@
                 <enabled>false</enabled>
             </snapshots>
         </pluginRepository>
+        <pluginRepository>
+            <id>mule-public</id>
+            <url>https://repository.mulesoft.org/nexus/content/repositories/releases</url>
+        </pluginRepository>
     </pluginRepositories>
     <distributionManagement>
         <repository>
             <id>anypoint-exchange-v3</id>
             <name>Corporate Repository</name>
-            <url>https://maven.anypoint.mulesoft.com/api/v3/organizations/c5086b09-e718-47d0-8ff7-9c7bd0152544/maven</url>
+            <url>https://maven.anypoint.mulesoft.com/api/v3/organizations/c5086b09-e718-47d0-8ff7-9c7bd0152544/maven
+            </url>
             <layout>default</layout>
         </repository>
     </distributionManagement>
