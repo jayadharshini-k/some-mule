@@ -1,17 +1,14 @@
+[Yesterday 10:33] Jayadharshini N
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 
- 
-
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-
- 
 
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>c5086b09-e718-47d0-8ff7-9c7bd0152544</groupId>
     <artifactId>flowstest</artifactId>
-    <version>2.1.0</version>
+    <version>1.3.8</version>
     <packaging>mule-application</packaging>
     <name>flowstest</name>
     <description />
@@ -145,7 +142,7 @@
         </profile>
         <!-- Test Profile -->
         <profile>
-            <id>${deploy.environment}</id>
+            <id>test</id>
             <activation>
                 <activeByDefault>false</activeByDefault>
             </activation>
@@ -160,12 +157,12 @@
                             <cloudhub2Deployment>
                                 <uri>https://anypoint.mulesoft.com</uri>
                                 <provider>MC</provider>
-                                <environment>${deploy.environment}</environment>
+                                <environment>test</environment>
                                 <target>Cloudhub-US-East-2</target>
                                 <muleVersion>4.4.0</muleVersion>
                                 <username>${cloudhub.username}</username>
                                 <password>${cloudhub.password}</password>
-                                <applicationName>${deploy.applicationName}</applicationName>
+                                <applicationName>test-app</applicationName>
                                 <businessGroupId>${env.BUSINESS_GROUP_ID}</businessGroupId>
                                 <replicas>1</replicas>
                                 <vCores>0.1</vCores>
@@ -176,67 +173,37 @@
             </build>
         </profile>
         <!-- Prod Profile -->
-        <!-- <profile>
-
+        <profile>
             <id>prod</id>
-
             <activation>
-
                 <activeByDefault>false</activeByDefault>
-
             </activation>
-
             <build>
-
                 <plugins>
-
                     <plugin>
-
                         <groupId>org.mule.tools.maven</groupId>
-
                         <artifactId>mule-maven-plugin</artifactId>
-
                         <version>${mule.maven.plugin.version}</version>
-
                         <extensions>true</extensions>
-
                         <configuration>
-
                             <cloudhub2Deployment>
-
                                 <uri>https://anypoint.mulesoft.com</uri>
-
                                 <provider>MC</provider>
-
-                                <environment>${deploy.environment}</environment>
-
+                                <environment>prod</environment>
                                 <target>Cloudhub-US-East-2</target>
-
                                 <muleVersion>4.4.0</muleVersion>
-
                                 <username>${cloudhub.username}</username>
-
                                 <password>${cloudhub.password}</password>
-
                                 <applicationName>production-app</applicationName>
-
                                 <businessGroupId>${env.BUSINESS_GROUP_ID}</businessGroupId>
-
                                 <replicas>1</replicas>
-
                                 <vCores>0.1</vCores>
-
                             </cloudhub2Deployment>
-
                         </configuration>
-
                     </plugin>
-
                 </plugins>
-
             </build>
-
-        </profile> -->
+        </profile>
     </profiles>
     <repositories>
         <repository>
