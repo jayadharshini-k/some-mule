@@ -122,7 +122,7 @@
                                 <muleVersion>4.4.0</muleVersion>
                                 <username>${cloudhub.username}</username>
                                 <password>${cloudhub.password}</password>
-                                <applicationName>dev-app</applicationName>
+                                <applicationName>new-dev-app</applicationName>
                                 <businessGroupId>${env.BUSINESS_GROUP_ID}</businessGroupId>
                                 <replicas>1</replicas>
                                 <vCores>0.1</vCores>
@@ -168,7 +168,7 @@
                                 <muleVersion>4.4.0</muleVersion>
                                 <username>${cloudhub.username}</username>
                                 <password>${cloudhub.password}</password>
-                                <applicationName>test-app</applicationName>
+                                <applicationName>new-test-app</applicationName>
                                 <businessGroupId>${env.BUSINESS_GROUP_ID}</businessGroupId>
                                 <replicas>1</replicas>
                                 <vCores>0.1</vCores>
@@ -201,7 +201,7 @@
                                 <muleVersion>4.4.0</muleVersion>
                                 <username>${cloudhub.username}</username>
                                 <password>${cloudhub.password}</password>
-                                <applicationName>production-app</applicationName>
+                                <applicationName>new-production-app</applicationName>
                                 <businessGroupId>${env.BUSINESS_GROUP_ID}</businessGroupId>
                                 <replicas>1</replicas>
                                 <vCores>0.1</vCores>
