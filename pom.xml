@@ -138,7 +138,7 @@
             </build>
         </profile>
         <profile>
-            <id>test</id>
+            <id>${deploy.environment}</id>
             <activation>
                 <activeByDefault>false</activeByDefault>
             </activation>
@@ -148,19 +148,19 @@
                         <!-- Mule Maven Plugin Configuration for Dynamic Env -->
                         <groupId>org.mule.tools.maven</groupId>
                         <artifactId>mule-maven-plugin</artifactId>
-                        <version>3.8.6</version>
+                        <version>${mule.maven.plugin.version}</version>
                         <extensions>true</extensions>
                         <configuration>
                             <cloudhub2Deployment>
                                 <uri>https://anypoint.mulesoft.com</uri>
                                 <provider>MC</provider>
-                                <environment>test</environment>
+                                <environment>${deploy.environment}</environment>
                                 <target>Cloudhub-US-East-2</target>
                                 <muleVersion>4.4.0</muleVersion>
-                                <username>CLOUDHUB_USERNAME</username>
-                                <password>CLOUDHUB_PASSWORD</password>
-                                <applicationName>new-test-app</applicationName>
-                                <businessGroupId>BUSINESS_GROUP_ID</businessGroupId>
+                                <username>${cloudhub.username}</username>
+                                <password>${cloudhub.password}</password>
+                                <applicationName>new-${deploy.environment}-app</applicationName>
+                                <businessGroupId>${env.BUSINESS_GROUP_ID}</businessGroupId>
                                 <replicas>1</replicas>
                                 <vCores>0.1</vCores>
                             </cloudhub2Deployment>
