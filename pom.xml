@@ -140,9 +140,7 @@
         <profile>
             <id>${deploy.environment}</id>
             <activation>
-                <property>
-                    <name>${deploy.environment}</name>
-                </property>
+                <activeByDefault>false</activeByDefault>
             </activation>
             <build>
                 <plugins>
