@@ -138,10 +138,10 @@
             </build>
         </profile>
         <profile>
-            <id>env</id>
+            <id>${deploy.environment}</id>
             <activation>
                 <property>
-                    <name>deploy.environment</name>
+                    <name>${deploy.environment}</name>
                 </property>
             </activation>
             <build>
@@ -176,7 +176,7 @@
                                 </goals>
                                 <!-- Specify the profiles that should be activated for the deployment -->
                                 <configuration>
-                                    <profiles>env</profiles>
+                                    <profiles>${deploy.environment}</profiles>
                                 </configuration>
                             </execution>
                         </executions>
