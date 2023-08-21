@@ -112,10 +112,10 @@
                                 <environment>dev</environment>
                                 <target>Cloudhub-US-East-2</target>
                                 <muleVersion>4.4.0</muleVersion>
-                                <username>${cloudhub.username}</username>
-                                <password>${cloudhub.password}</password>
+                                <username>CLOUDHUB_USERNAME</username>
+                                <password>CLOUDHUB_PASSWORD</password>
                                 <applicationName>new-dev-app</applicationName>
-                                <businessGroupId>${env.BUSINESS_GROUP_ID}</businessGroupId>
+                                <businessGroupId>BUSINESS_GROUP_ID</businessGroupId>
                                 <replicas>1</replicas>
                                 <vCores>0.1</vCores>
                             </cloudhub2Deployment>
@@ -138,7 +138,7 @@
             </build>
         </profile>
         <profile>
-            <id>${deploy.environment}</id>
+            <id>test</id>
             <activation>
                 <activeByDefault>false</activeByDefault>
             </activation>
@@ -148,19 +148,19 @@
                         <!-- Mule Maven Plugin Configuration for Dynamic Env -->
                         <groupId>org.mule.tools.maven</groupId>
                         <artifactId>mule-maven-plugin</artifactId>
-                        <version>${mule.maven.plugin.version}</version>
+                        <version>3.8.6</version>
                         <extensions>true</extensions>
                         <configuration>
                             <cloudhub2Deployment>
                                 <uri>https://anypoint.mulesoft.com</uri>
                                 <provider>MC</provider>
-                                <environment>${deploy.environment}</environment>
+                                <environment>test</environment>
                                 <target>Cloudhub-US-East-2</target>
                                 <muleVersion>4.4.0</muleVersion>
-                                <username>${cloudhub.username}</username>
-                                <password>${cloudhub.password}</password>
-                                <applicationName>new-${deploy.environment}-app</applicationName>
-                                <businessGroupId>${env.BUSINESS_GROUP_ID}</businessGroupId>
+                                <username>CLOUDHUB_USERNAME</username>
+                                <password>CLOUDHUB_PASSWORD</password>
+                                <applicationName>new-test-app</applicationName>
+                                <businessGroupId>BUSINESS_GROUP_ID</businessGroupId>
                                 <replicas>1</replicas>
                                 <vCores>0.1</vCores>
                             </cloudhub2Deployment>
