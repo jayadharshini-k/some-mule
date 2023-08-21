@@ -112,10 +112,10 @@
                                 <environment>dev</environment>
                                 <target>Cloudhub-US-East-2</target>
                                 <muleVersion>4.4.0</muleVersion>
-                                <username>CLOUDHUB_USERNAME</username>
-                                <password>CLOUDHUB_PASSWORD</password>
+                                <username>${cloudhub.username}</username>
+                                <password>${cloudhub.password}</password>
                                 <applicationName>new-dev-app</applicationName>
-                                <businessGroupId>BUSINESS_GROUP_ID</businessGroupId>
+                                <businessGroupId>${env.BUSINESS_GROUP_ID}</businessGroupId>
                                 <replicas>1</replicas>
                                 <vCores>0.1</vCores>
                             </cloudhub2Deployment>
