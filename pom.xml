@@ -120,13 +120,15 @@
                                 <vCores>0.1</vCores>
                             </cloudhub2Deployment>
                         </configuration>
-                        <execution>
-                            <id>deploy-cloudhub</id>
-                            <phase>deploy</phase>
-                            <goals>
-                                <goal>deploy</goal>
-                            </goals>
-                        </execution>
+                        <executions>
+                            <execution>
+                                <id>deploy-cloudhub</id>
+                                <phase>deploy</phase>
+                                <goals>
+                                    <goal>deploy</goal>
+                                </goals>
+                            </execution>
+                        </executions>
                     </plugin>
                 </plugins>
             </build>
