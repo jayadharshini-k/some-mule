@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>c5086b09-e718-47d0-8ff7-9c7bd0152544</groupId>
     <artifactId>flowstest</artifactId>
-    <version>2.2.1</version>
+    <version>2.3.0</version>
     <packaging>mule-application</packaging>
     <name>flowstest</name>
     <description />
@@ -114,7 +114,7 @@
                                 <muleVersion>4.4.0</muleVersion>
                                 <username>${cloudhub.username}</username>
                                 <password>${cloudhub.password}</password>
-                                <applicationName>new-${deploy.environment}-app</applicationName>
+                                <applicationName>final-${deploy.environment}-app</applicationName>
                                 <businessGroupId>${env.BUSINESS_GROUP_ID}</businessGroupId>
                                 <replicas>1</replicas>
                                 <vCores>0.1</vCores>
