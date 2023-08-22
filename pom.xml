@@ -115,7 +115,7 @@
                                 <server>anypoint-exchange-v3</server>
                                 <username>${cloudhub.username}</username>
                                 <password>${cloudhub.password}</password>
-                                <applicationName>final-${deploy.environment}-app</applicationName>
+                                <applicationName>start-${deploy.environment}-app</applicationName>
                                 <businessGroupId>${env.BUSINESS_GROUP_ID}</businessGroupId>
                                 <replicas>1</replicas>
                                 <vCores>0.1</vCores>
