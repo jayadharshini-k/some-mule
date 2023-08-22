@@ -34,6 +34,33 @@
                     <classifier>mule-application</classifier>
                 </configuration>
             </plugin>
+            <!-- Copy execution_pom.xml during generate-sources phase -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.2.0</version>
+                <executions>
+                    <execution>
+                        <id>copy-execution-pom</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${basedir}</directory>
+                                    <includes>
+                                        <include>execution_pom.xml</include>
+                                    </includes>
+                                    <filtering>true</filtering>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
     <dependencies>
@@ -106,44 +133,25 @@
                         <version>${mule.maven.plugin.version}</version>
                         <extensions>true</extensions>
                         <configuration>
-                            <!-- Configuration details for your environment -->
+                            <cloudhub2Deployment>
+                                <uri>https://anypoint.mulesoft.com</uri>
+                                <provider>MC</provider>
+                                <environment>dev</environment>
+                                <target>Cloudhub-US-East-2</target>
+                                <muleVersion>4.4.0</muleVersion>
+                                <username>${cloudhub.username}</username>
+                                <password>${cloudhub.password}</password>
+                                <applicationName>new-dev-app</applicationName>
+                                <businessGroupId>${env.BUSINESS_GROUP_ID}</businessGroupId>
+                                <replicas>1</replicas>
+                                <vCores>0.1</vCores>
+                            </cloudhub2Deployment>
                         </configuration>
                     </plugin>
                 </plugins>
             </build>
         </profile>
     </profiles>
-    <!-- Include the execution_pom.xml file for 'dev' environment -->
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <version>3.2.0</version>
-                <executions>
-                    <execution>
-                        <id>copy-execution-pom</id>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <configuration>
-                            <outputDirectory>${project.build.directory}</outputDirectory>
-                            <resources>
-                                <resource>
-                                    <directory>${basedir}</directory>
-                                    <includes>
-                                        <include>execution_pom.xml</include>
-                                    </includes>
-                                    <filtering>true</filtering>
-                                </resource>
-                            </resources>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
     <repositories>
         <repository>
             <id>anypoint-exchange-v3</id>
