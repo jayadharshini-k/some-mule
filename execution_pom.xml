@@ -1,0 +1,13 @@
+<executions>
+    <!-- This execution will be activated based on the condition -->
+    <execution>
+        <id>deploy-cloudhub</id>
+        <phase>deploy</phase>
+        <goals>
+            <goal>deploy</goal>
+        </goals>
+        <configuration>
+            <profiles>${deploy.environment}</profiles>
+        </configuration>
+    </execution>
+</executions>
